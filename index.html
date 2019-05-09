@@ -4,35 +4,37 @@
 <head>
     <title>Reddit</title>
     <link rel="icon" href="./img/logo_NOT_FINAL.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div class="flex-row" id="windows-bar">
-        <div class="flex-col" id="left">
-            <img id="left" src="./img/top-left-icons.jpg" alt="top-left-icons" />
-        </div>
-        <div class="flex-col" id="middle">
-            <img id="middle" src="./img/top-middle-title.jpg" alt="top-middle-title" />
-        </div>
-        <div class="flex-col" id="right">
-            <img id="right" src="./img/top-right-icons.jpg" alt="top-right-icons" />
-        </div>
-    </div>
-
-    <div class="flex-row" id="file-bar">
-        <div class="flex-col" id="left">
-            <img id="left" src="./img/left-ribbon-list.jpg" alt="left-ribbon-list" />
-        </div>
-        <div class="flex-col" id="right">
-            <img class="" id="" src="./img/right-ribbon-icons.jpg" alt="right-ribbon-icons" />
+    <div class="container-fluid" id="windows-bar">
+        <div class="row" style="background-color: #207345">
+            <div class="col-xl-6" id="left">
+                <img id="left" src="./img/top-left-icons.jpg" class="img-fluid" alt="top-left-icons" />
+            </div>
+            <div class="col-xl-3" id="middle">
+                <img id="middle" src="./img/top-middle-title.jpg" class="img-fluid" alt="top-middle-title" />
+            </div>
+            <div class="col-xl-3" id="right">
+                <img id="right" src="./img/top-right-icons.jpg" class="img-fluid" alt="top-right-icons" />
+            </div>
         </div>
     </div>
 
-    <div class="flex-row" id="main-bar">
-        <div class="flex-col" id="main">
-            <img id="main" src="./img/main-ribbon-icons.jpg" alt="main-ribbon-icons" />
+    <div class="row" id="file-bar" style="background-color: #F3F2F0">
+        <div class="col-9" id="left">
+            <img id="left" src="./img/left-ribbon-list.jpg" class="img-fluid" alt="left-ribbon-list" />
+        </div>
+        <div class="col-3" id="right">
+            <img id="right" src="./img/right-ribbon-icons.jpg" class="img-fluid" alt="right-ribbon-icons" />
+        </div>
+    </div>
+
+    <div class="row" id="main-bar">
+        <div class="col" id="main">
+            <img id="main" src="./img/main-ribbon-icons.jpg" class="img-fluid" alt="main-ribbon-icons" />
         </div>
     </div>
 
@@ -69,8 +71,10 @@
                 <td></td>
                 <td> Rusty Ryan (BWPhoenix) </td>
                 <td>(RE:^13891) [Spoilers] Post-Premiere Discussion – Season 8 Episode 1 </td>
-                <td> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. ...</td>
+                <td>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. ...
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -106,10 +110,12 @@
                 <td></td>
                 <td>Jon Osterman (AutoModerator)</td>
                 <td>(RE:^5) Simple Questions Sunday!</td>
-                <td>1 DxS978
+                <td>
+                    1 DxS978
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                    laboris nisi ut aliquip ex ea commodo consequat...</td>
+                    laboris nisi ut aliquip ex ea commodo consequat...
+                </td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -551,8 +557,9 @@
         </tbody>
     </table>
 
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
