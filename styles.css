@@ -20,7 +20,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
     line-height: 1;
-    background-color: #ebf5ed;
+    background-color: #F3F2F0;
 }
 
 ol, ul {
@@ -37,15 +37,19 @@ blockquote:before, blockquote:after, q:before, q:after {
 }
 
 table {
-    width: 1920px;
-    margin: 0 auto;
     border-collapse: collapse;
     border-spacing: 0;
+    background-color: white;
+    height: 100vh;
 }
 
 td {
     border: 1px solid black;
     min-width: 50px;
+}
+
+td:first-child {
+    text-align: center;
 }
 
 .flex-row {
@@ -54,7 +58,7 @@ td {
 }
 
 .flex-row#windows-bar {
-    background-color: #086624;
+    background-color: #207345;
     height: 43px;
 }
 
