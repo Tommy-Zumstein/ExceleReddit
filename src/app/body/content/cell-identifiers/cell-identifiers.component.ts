@@ -13,6 +13,5 @@ export class CellIdentifiersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.identifiers = Array.from(this.identifiers);
   }
 }
