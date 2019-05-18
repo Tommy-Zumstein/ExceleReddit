@@ -8,6 +8,7 @@ import { SearchComponent } from './body/search/search.component';
 const routes: Routes = [
   { path: '', component: HeaderComponent },
   { path: '', component: SearchComponent },
+  { path: '', component: MainComponent },
   { path: 'main', component: MainComponent },
   { path: 'me', component: GridComponent },
 ];
