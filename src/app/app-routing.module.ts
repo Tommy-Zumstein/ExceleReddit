@@ -5,7 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { GridComponent } from './body/content/grid/grid.component';
 
 const routes: Routes = [
-  { path: '', component: HeaderComponent },
+  { path: '', component: MainComponent },
   { path: 'main', component: MainComponent },
   { path: 'me', component: GridComponent },
 ];

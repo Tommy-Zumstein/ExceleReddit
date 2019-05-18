@@ -29,6 +29,8 @@ import { CellIdentifiersComponent } from './body/content/cell-identifiers/cell-i
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
