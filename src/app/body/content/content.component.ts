@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content.component.sass']
 })
 export class ContentComponent implements OnInit {
+  identifiers: String[] = [">", "A", "B", "C", "D", "E", "F", "G", "H", "I"];
+  identifier: String = "A";
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
