@@ -6,7 +6,11 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
-import { TableComponent } from './body/table/table.component';
+import { SearchComponent } from './body/search/search.component';
+import { ContentComponent } from './body/content/content.component';
+import { FooterComponent } from './footer/footer.component';
+import { GridComponent } from './body/content/grid/grid.component';
+import { CellIdentifiersComponent } from './body/content/cell-identifiers/cell-identifiers.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { TableComponent } from './body/table/table.component';
     MainComponent,
     HeaderComponent,
     BodyComponent,
-    TableComponent,
+    SearchComponent,
+    ContentComponent,
+    FooterComponent,
+    GridComponent,
+    CellIdentifiersComponent,
   ],
   imports: [
     BrowserModule,
