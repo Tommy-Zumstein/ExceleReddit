@@ -1,5 +1,22 @@
+<tr>
+  <th scope="row">1</th>
+  <td>UP</td>
+  <td>DN</td>
+  <td>LINK</td>
+  <td>USER</td>
+  <td>SUB</td>
+  <td>TITLE</td>
+  <td>COMMENTS</td>
+</tr>
 <tr *ngFor="let subreddit of data">
-  <div>{{subreddit.url}}</div>
+  <th scope="row">X</th>
+  <td>↑</td>
+  <td>↓</td>
+  <td><a href={{subreddit.url}}>+</a></td>
+  <td>{{subreddit.author_fullname}}</td>
+  <td>{{subreddit.subreddit}}</td>
+  <td>{{subreddit.title}}</td>
+  <td>Comments</td> 
 </tr>
 
 <!-- Sample data of subreddit:
@@ -13,3 +30,4 @@ subreddit_name_prefixed: "r/pics"
 thumbnail: "https://b.thumbs.redditmedia.com/COPEW8FioXPQtjdMoFOPnrHGC3FIsnbQ_LkpykeLShQ.jpg"
 title: "This sign shouldn't have to exist"
 url: "https://i.redd.it/816d81bit0z21.jpg" -->
+
