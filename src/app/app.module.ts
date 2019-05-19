@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GridComponent } from './body/content/grid/grid.component';
 import { CellIdentifiersComponent } from './body/content/cell-identifiers/cell-identifiers.component';
 import { HeaderIconsComponent } from './header/header-icons/header-icons.component';
+import { CellRowComponent } from './body/content/cell-row/cell-row.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeaderIconsComponent } from './header/header-icons/header-icons.compone
     GridComponent,
     CellIdentifiersComponent,
     HeaderIconsComponent,
+    CellRowComponent,
   ],
   imports: [
     BrowserModule,

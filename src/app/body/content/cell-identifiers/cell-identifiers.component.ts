@@ -6,8 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cell-identifiers.component.sass']
 })
 export class CellIdentifiersComponent implements OnInit {
-  @Input()
-  identifiers: String | String[];
+  @Input() identifiers: String | String[];
 
   constructor() {
   }

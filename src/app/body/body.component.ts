@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-body',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.sass']
 })
 export class BodyComponent implements OnInit {
+  @Input() data: Object;
 
-  constructor() { }
+  constructor() {
+    console.log("BodyComponent: " + this.data);
+  }
 
   ngOnInit() {
   }
