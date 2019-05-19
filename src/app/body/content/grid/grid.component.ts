@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { me, accessToken } from '../../../../reddit_api';
+import { me, getHomePage } from '../../../../reddit_api';
 
 @Component({
   selector: 'app-grid',
@@ -11,10 +11,11 @@ export class GridComponent implements OnInit {
   me: Object;
 
   constructor() {
-    accessToken().then(res => {
-      this.access_token = res.data;
-      console.log(this.access_token);
-    })
+    getHomePage()
+      .then(res => {
+        this.access_token = res.data;
+        console.log(this.access_token);
+      })
     me()
       .then(res => this.me = res)
       .catch(err => console.log(err))
