@@ -12,11 +12,16 @@
   <th scope="row">X</th>
   <td>↑</td>
   <td>↓</td>
-  <td><a href={{subreddit.url}}>+</a></td>
-  <td>{{subreddit.author_fullname}}</td>
+  <td>
+    <app-cell-link link={{subreddit.url}} text="+"></app-cell-link>
+  </td>
+  <td>{{subreddit.author}}</td>
   <td>{{subreddit.subreddit}}</td>
   <td>{{subreddit.title}}</td>
-  <td>Comments</td> 
+  <td>
+    <app-cell-link link={{subreddit.id}} fullUrl="https://pay.reddit.com/comments/$$.json" text="Comment">
+    </app-cell-link>
+  </td>
 </tr>
 
 <!-- Sample data of subreddit:
@@ -30,4 +35,3 @@ subreddit_name_prefixed: "r/pics"
 thumbnail: "https://b.thumbs.redditmedia.com/COPEW8FioXPQtjdMoFOPnrHGC3FIsnbQ_LkpykeLShQ.jpg"
 title: "This sign shouldn't have to exist"
 url: "https://i.redd.it/816d81bit0z21.jpg" -->
-
