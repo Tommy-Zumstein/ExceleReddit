@@ -13,6 +13,9 @@ import { GridComponent } from './body/content/grid/grid.component';
 import { CellIdentifiersComponent } from './body/content/cell-identifiers/cell-identifiers.component';
 import { HeaderIconsComponent } from './header/header-icons/header-icons.component';
 import { CellRowComponent } from './body/content/cell-row/cell-row.component';
+import { CellLinkComponent } from './body/content/cell-row/cell-link/cell-link.component';
+import { MainResolve } from './main/main.resolve';
+import { MainService } from './main/main.service';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,16 @@ import { CellRowComponent } from './body/content/cell-row/cell-row.component';
     CellIdentifiersComponent,
     HeaderIconsComponent,
     CellRowComponent,
+    CellLinkComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MainResolve,
+    MainService
+  ],
   bootstrap: [
     AppComponent
   ]
