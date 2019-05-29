@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { me, getHomePage } from '../../../../reddit_api';
+import { getHomePage } from '../../../../reddit_api';
 
 @Component({
   selector: 'app-grid',
@@ -8,17 +8,13 @@ import { me, getHomePage } from '../../../../reddit_api';
 })
 export class GridComponent implements OnInit {
   access_token: Object;
-  me: Object;
 
   constructor() {
     getHomePage()
       .then(res => {
         this.access_token = res.data;
         console.log(this.access_token);
-      })
-    me()
-      .then(res => this.me = res)
-      .catch(err => console.log(err))
+      });
   }
 
   ngOnInit() {
