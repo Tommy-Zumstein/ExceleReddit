@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <p>
+    User Name:
+    <input type="text" required ng-model="model.userName" name="userName">
+  </p>
+  <p>
+    Email:
+    <input type="text" requied ng-model="model.email" name="email">
+  </p>
+  <button type="submit">Submit</button>
+</form>
+
+<button (click)="onSubmit()">Sample User</button>

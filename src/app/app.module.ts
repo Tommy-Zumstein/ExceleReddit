@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { CellRowComponent } from './body/content/cell-row/cell-row.component';
 import { CellLinkComponent } from './body/content/cell-row/cell-link/cell-link.component';
 import { MainResolve } from './main/main.resolve';
 import { MainService } from './main/main.service';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import { MainService } from './main/main.service';
     HeaderIconsComponent,
     CellRowComponent,
     CellLinkComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     MainResolve,
