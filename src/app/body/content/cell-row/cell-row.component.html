@@ -1,29 +1,46 @@
-<tr>
-  <th scope="row">1</th>
-  <td>UP</td>
-  <td>DN</td>
-  <td>LINK</td>
-  <td>USER</td>
-  <td>SUB</td>
-  <td>TITLE</td>
-  <td>COMMENTS</td>
-</tr>
-<tr *ngFor="let subreddit of data">
-  <th scope="row">X</th>
-  <td>↑</td>
-  <td>↓</td>
-  <td>
-    <app-cell-link link={{subreddit.url}} text="+"></app-cell-link>
-  </td>
-  <td>{{subreddit.author}}</td>
-  <td>{{subreddit.subreddit}}</td>
-  <td>{{subreddit.title}}</td>
-  <td>
-    <app-cell-link link={{subreddit.id}} fullUrl="https://pay.reddit.com/comments/$$.json" text="Comment">
-    </app-cell-link>
-  </td>
-</tr>
+<div class="row">
+  <div class="col-xs">1</div>
+  <div class="col-xs">UP</div>
+  <div class="col-xs">DN</div>
+  <div class="col-xs">LINK</div>
+  <div class="col-sm">USER</div>
+  <div class="col-sm">SUB</div>
+  <div class="col-xl">TITLE</div>
+  <div class="col-md">COMMENTS</div>
+</div>
 
+<div class="content--block">
+  <div class="d-block" *ngFor="let subreddit of data">
+    <div class="row">
+      <div class="col-xs">X</div>
+      <div class="col-xs">↑</div>
+      <div class="col-xs">↓</div>
+      <div class="col-xs">
+        <app-cell-link link={{subreddit.url}} text="+"></app-cell-link>
+      </div>
+      <div class="col-sm">{{subreddit.author}}</div>
+      <div class="col-sm">{{subreddit.subreddit}}</div>
+      <div class="col-xl">{{subreddit.title}}</div>
+      <div class="col-md" (click)="addComments(subreddit.id)">
+        <p>Comment</p>
+      </div>
+    </div>
+
+    <div *ngIf="subreddit.comments">
+      <div class="row" *ngFor="let comment of subreddit.comments">
+        <div class="col-xs">X</div>
+        <div class="col-xs">↑</div>
+        <div class="col-xs">↓</div>
+        <div class="col-xs">
+          <app-cell-link link={{comment.permalink}} text="+"></app-cell-link>
+        </div>
+        <div class="col-sm">{{comment.author}}</div>
+        <div class="col-sm">{{comment.subreddit}}</div>
+        <div class="col-xl-10">{{comment.body}}</div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Sample data of subreddit:
 
 author_fullname: "t2_21a8046r"

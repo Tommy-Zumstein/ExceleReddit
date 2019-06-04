@@ -1,6 +1,33 @@
-td, th
-  font-family: Calibri;
-  color: #000000;
- 
-tr
-  background-color: #FFFFFF;
+td,
+th 
+    font-family: Calibri;
+    color: #000000;
+
+tr 
+    background-color: #FFFFFF;
+
+.content--block
+    border-bottom: 1px solid black;
+
+.row
+    margin: 0 1px;
+
+.row>div 
+    border: 1px solid black;
+    border-right: none;
+    border-bottom: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    
+
+.row>div:last-child
+    border-right: 1px solid black;
+
+.row>div>p
+    height: 12px;
+    color: blue;
+    text-decoration: underline;
+
+.row>div>p:hover
+    cursor: pointer
