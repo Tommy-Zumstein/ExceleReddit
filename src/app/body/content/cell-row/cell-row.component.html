@@ -1,48 +1,52 @@
 <div class="row">
-  <div class="col-xs">1</div>
-  <div class="col-xs">UP</div>
-  <div class="col-xs">DN</div>
-  <div class="col-xs">LINK</div>
-  <div class="col-sm">USER</div>
-  <div class="col-sm">SUB</div>
+  <div class="col-sm-1">{{counterInc()}}</div>
+  <div class="col-sm-1">UP</div>
+  <div class="col-sm-1">DN</div>
+  <div class="col-sm-1">LINK</div>
+  <div class="col-sm-1">USER</div>
+  <div class="col-sm-1">SUB</div>
   <div class="col-xl">TITLE</div>
-  <div class="col-md">COMMENTS</div>
+  <div class="col-md-2">COMMENTS</div>
 </div>
 
 <div class="content--block">
   <div class="d-block" *ngFor="let subreddit of data">
-    <div class="row">
-      <div class="col-xs">X</div>
-      <div class="col-xs">↑</div>
-      <div class="col-xs">↓</div>
-      <div class="col-xs">
+    <div class="row" (click)="addComments(subreddit.id)">
+      <div class="col-xs-1">{{counterInc()}}</div>
+      <div class="col-xs-1">↑</div>
+      <div class="col-xs-1">↓</div>
+      <div class="col-xs-1">
         <app-cell-link link={{subreddit.url}} text="+"></app-cell-link>
       </div>
-      <div class="col-sm">{{subreddit.author}}</div>
-      <div class="col-sm">{{subreddit.subreddit}}</div>
+      <div class="col-sm-1">{{subreddit.author}}</div>
+      <div class="col-sm-1">{{subreddit.subreddit}}</div>
       <div class="col-xl">{{subreddit.title}}</div>
-      <div class="col-md" (click)="addComments(subreddit.id)">
-        <p>Comment</p>
+      <div class="col-md-2">
+        <!-- This is a link to add comment to a post -->
+        <!-- TODO: implement this -->
+        <p (click)="makeComment(subreddit.id)">Comment</p>
       </div>
     </div>
 
     <div *ngIf="subreddit.comments">
-      <div class="row" *ngFor="let comment of subreddit.comments">
-        <div class="col-xs">X</div>
-        <div class="col-xs">↑</div>
-        <div class="col-xs">↓</div>
-        <div class="col-xs">
-          <app-cell-link link={{comment.permalink}} text="+"></app-cell-link>
+      <div *ngFor="let comment of subreddit.comments">
+        <div class="row" [ngClass]="{expandComment: expandComment !== comment.id}" (onClick)="expand()">
+          <div class="col-xs">{{counterInc()}}</div>
+          <div class="col-xs">↑</div>
+          <div class="col-xs">↓</div>
+          <div class="col-xs">
+            <app-cell-link link={{comment.permalink}} text="+"></app-cell-link>
+          </div>
+          <div class="col-sm">{{comment.author}}</div>
+          <div class="col-sm">{{comment.subreddit}}</div>
+          <div class="col-xl-10">{{comment.body}}</div>
         </div>
-        <div class="col-sm">{{comment.author}}</div>
-        <div class="col-sm">{{comment.subreddit}}</div>
-        <div class="col-xl-10">{{comment.body}}</div>
       </div>
     </div>
   </div>
 </div>
-<!-- Sample data of subreddit:
 
+<!-- Sample data of subreddit:
 author_fullname: "t2_21a8046r"
 id: "bq7rky"
 permalink: "/r/pics/comments/bq7rky/this_sign_shouldnt_have_to_exist/"
