@@ -6,8 +6,6 @@ var expect = chai.expect;
 chai.use(chaiHttp);
 
 describe('Get Reddit Homepage', function () {
-    //	this.timeout(15000);
-
     var requestResult;
     var response;
 

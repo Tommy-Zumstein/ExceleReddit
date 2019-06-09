@@ -18,6 +18,10 @@ import { CellLinkComponent } from './body/content/cell-row/cell-link/cell-link.c
 import { MainResolve } from './main/main.resolve';
 import { MainService } from './main/main.service';
 import { UsersComponent } from './users/users.component';
+import { CellRowService } from './body/content/cell-row/cell-row.service';
+import { LoginComponent } from './login/login.component';
+import { TitleComponent } from './body/content/title/title.component';
+import { CommentsComponent } from './body/content/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -34,18 +38,22 @@ import { UsersComponent } from './users/users.component';
     CellRowComponent,
     CellLinkComponent,
     UsersComponent,
+    LoginComponent,
+    TitleComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     MainResolve,
-    MainService
+    MainService,
+    CellRowService,
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ]
 })
 export class AppModule { }

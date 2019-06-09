@@ -1,0 +1,5 @@
+<form (submit)="loginSubmit()">
+  <input #userName type="text" name="userName" (blur)="setLogin({userName: userName.value})" />
+  <input #password type="text" name="password" (blur)="setLogin({password: password.value})" />
+  <button type=" submit">Login</button>
+</form>

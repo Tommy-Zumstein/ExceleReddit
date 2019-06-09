@@ -1,12 +1,17 @@
 <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-  <p>
-    User Name:
-    <input type="text" required ng-model="model.userName" name="userName">
-  </p>
-  <p>
-    Email:
-    <input type="text" requied ng-model="model.email" name="email">
-  </p>
+
+  <label for="userName">userName:</label>
+  <input #userName type="text" id="userName" requied ng-model="model.userName" name="userName"
+    (change)="setValue({userName: userName.value})">
+
+  <label for="email">Email:</label>
+  <input #email type="text" id="email" required ng-model="model.emai" name="email"
+    (change)="setValue({email: email.value})">
+
+  <label for="password">Password:</label>
+  <input #password type="text" id="password" requied ng-model="model.password" name="password"
+    (change)="setValue({password: password.value})">
+
   <button type="submit">Submit</button>
 </form>
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { getHomePage } from '../../reddit_api';
+import { getHomePage } from '../../api/reddit_api';
 
 @Injectable() export class MainService {
 

@@ -10,10 +10,10 @@ import { MainService } from './main.service';
 export class MainComponent implements OnInit {
   data: Array<Object>;
 
-  constructor(private frontPage: MainService) { }
+  constructor(private homePage: MainService) { }
 
   ngOnInit() {
-    this.frontPage.homePage().subscribe(
+    this.homePage.homePage().subscribe(
       resultsFromReddit => {
         this.data = map(
           resultsFromReddit,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getHomePage } from '../../../../reddit_api';
+import { getHomePage } from '../../../../api/reddit_api';
 
 @Component({
   selector: 'app-grid',
@@ -18,7 +18,6 @@ export class GridComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
 }

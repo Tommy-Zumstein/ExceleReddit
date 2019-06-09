@@ -1,0 +1,11 @@
+<div class="row" [ngClass]="{expandComment: expandComment !== comment.id}" (onClick)="expand()">
+  <div class="col-xs">{{counterInc}}</div>
+  <div class="col-xs">↑</div>
+  <div class="col-xs">↓</div>
+  <div class="col-xs">
+    <app-cell-link link={{comment.permalink}} text="+"></app-cell-link>
+  </div>
+  <div class="col-sm">{{comment.author}}</div>
+  <div class="col-sm">{{comment.subreddit}}</div>
+  <div class="col-xl-10">{{comment.body}}</div>
+</div>

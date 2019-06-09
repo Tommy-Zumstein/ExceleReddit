@@ -1,0 +1,20 @@
+<div class="row" (click)="addComments(subreddit.id)">
+  <div class="col-xs-1">{{counterInc}}</div>
+  <div class="col-xs-1">↑</div>
+  <div class="col-xs-1">↓</div>
+  <div class="col-xs-1">
+    <app-cell-link link={{subreddit.link}} text="+"></app-cell-link>
+  </div>
+  <div class="col-sm-1">{{subreddit.author}}</div>
+  <div class="col-sm-1">{{subreddit.title}}</div>
+  <div class="col-xl">{{subreddit.title}}</div>
+  <div class="col-md-2">
+    <!-- This is a link to add comment to a post -->
+    <!-- TODO: implement this -->
+    <p (click)="makeComment(subreddit.id)">Comment</p>
+  </div>
+  <div *ngIf="subreddit.comments">
+    <div *ngFor="let comment of subreddit.comments">
+      <app-comments [comment]="comment"></app-comments>
+    </div>
+  </div>

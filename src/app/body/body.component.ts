@@ -9,7 +9,6 @@ export class BodyComponent implements OnInit {
   @Input() data: Object;
 
   constructor() {
-    console.log("BodyComponent: " + this.data);
   }
 
   ngOnInit() {

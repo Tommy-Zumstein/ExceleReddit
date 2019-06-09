@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { getComments } from '../../../../reddit_api';
+import { getComments } from '../../../../api/reddit_api';
 
 @Injectable() export class CellRowService {
-
   getComments(id) {
     return Observable.create(
       observer => {

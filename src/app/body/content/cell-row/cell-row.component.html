@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-1">{{counterInc()}}</div>
+  <div class="col-sm-1">{{counterInc}}</div>
   <div class="col-sm-1">UP</div>
   <div class="col-sm-1">DN</div>
   <div class="col-sm-1">LINK</div>
@@ -11,38 +11,9 @@
 
 <div class="content--block">
   <div class="d-block" *ngFor="let subreddit of data">
-    <div class="row" (click)="addComments(subreddit.id)">
-      <div class="col-xs-1">{{counterInc()}}</div>
-      <div class="col-xs-1">↑</div>
-      <div class="col-xs-1">↓</div>
-      <div class="col-xs-1">
-        <app-cell-link link={{subreddit.url}} text="+"></app-cell-link>
-      </div>
-      <div class="col-sm-1">{{subreddit.author}}</div>
-      <div class="col-sm-1">{{subreddit.subreddit}}</div>
-      <div class="col-xl">{{subreddit.title}}</div>
-      <div class="col-md-2">
-        <!-- This is a link to add comment to a post -->
-        <!-- TODO: implement this -->
-        <p (click)="makeComment(subreddit.id)">Comment</p>
-      </div>
-    </div>
-
-    <div *ngIf="subreddit.comments">
-      <div *ngFor="let comment of subreddit.comments">
-        <div class="row" [ngClass]="{expandComment: expandComment !== comment.id}" (onClick)="expand()">
-          <div class="col-xs">{{counterInc()}}</div>
-          <div class="col-xs">↑</div>
-          <div class="col-xs">↓</div>
-          <div class="col-xs">
-            <app-cell-link link={{comment.permalink}} text="+"></app-cell-link>
-          </div>
-          <div class="col-sm">{{comment.author}}</div>
-          <div class="col-sm">{{comment.subreddit}}</div>
-          <div class="col-xl-10">{{comment.body}}</div>
-        </div>
-      </div>
-    </div>
+    <app-title [addComments]="addComments" [getComments]="service" [lineNumber]="counterInc" [makeComment]="makeComment"
+      [subreddit]="subreddit">
+    </app-title>
   </div>
 </div>
 
