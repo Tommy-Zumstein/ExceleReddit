@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { createUser } from './../../api/users.api';
 import { LoginInfo } from '../../types';
-
-// const md5 = require('md5');
+import { Md5 } from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-users',
@@ -12,7 +11,7 @@ import { LoginInfo } from '../../types';
 export class UsersComponent implements OnInit {
   userName: string;
   email: string;
-  password: string;
+  password: string | Int32Array;
   friends: Array<Object> = [];
   blocked: Array<Object> = [];
   hidden: Array<Object> = [];
@@ -37,7 +36,7 @@ export class UsersComponent implements OnInit {
       multi,
     })
       .then(res => {
-        console.log(res.data[0]);
+        console.log(res.data);
       })
       .catch(err => {
         console.log(err.message);
@@ -46,8 +45,8 @@ export class UsersComponent implements OnInit {
 
   setValue(login: LoginInfo) {
     if (login.userName) this.userName = login.userName;
-    // else if (login.password) this.password = md5(login.password);
-    else if (login.password) this.password = login.password;
+    else if (login.password) this.password = Md5.hashStr(<string>login.password);
+    // else if (login.password) this.password = login.password;
     else this.email = login.email;
   }
 }
