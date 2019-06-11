@@ -1,5 +1,12 @@
-<form (submit)="loginSubmit()">
-  <input #userName type="text" name="userName" (blur)="setLogin({userName: userName.value})" />
-  <input #password type="text" name="password" (blur)="setLogin({password: password.value})" />
-  <button type=" submit">Login</button>
-</form>
+<div>
+  <div *ngIf="!user">
+    <form (submit)="loginSubmit()">
+      <input #email type="email" name="email" (blur)="setLogin({email: email.value})" />
+      <input #password type="password" name="password" (blur)="setLogin({password: password.value})" />
+      <button type=" submit">Login</button>
+    </form>
+  </div>
+  <div *ngIf="user">
+    <app-main></app-main>
+  </div>
+</div>

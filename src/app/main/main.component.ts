@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map, pick } from 'lodash';
 import { MainService } from './main.service';
+import { UserStatus } from 'src/types';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,7 @@ import { MainService } from './main.service';
 })
 export class MainComponent implements OnInit {
   data: Array<Object>;
+  user: UserStatus;
 
   constructor(private homePage: MainService) { }
 

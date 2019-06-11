@@ -46,7 +46,6 @@ export class UsersComponent implements OnInit {
   setValue(login: LoginInfo) {
     if (login.userName) this.userName = login.userName;
     else if (login.password) this.password = Md5.hashStr(<string>login.password);
-    // else if (login.password) this.password = login.password;
     else this.email = login.email;
   }
 }
