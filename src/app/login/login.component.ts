@@ -11,9 +11,11 @@ import { UserStatus } from 'src/types';
 })
 export class LoginComponent implements OnInit {
   @Input() user: UserStatus;
-  email: string;
-  password: string | Int32Array;
+  login: LoginInfo;
 
+
+  // TODO: we can set the refreshToken of the user in the localStorage from the browser
+  //       and check against that on login
   constructor() {
   }
 
@@ -21,23 +23,23 @@ export class LoginComponent implements OnInit {
   }
 
   setLogin(login: LoginInfo) {
-    if (login.email) this.email = login.email;
-    else this.password = Md5.hashStr(<string>login.password);
+    if (login.password) {
+      login.password = Md5.hashStr(<string>login.password);
+    }
+    this.login = { ...this.login, ...login };
   }
 
   loginSubmit() {
     // Send to firebase
-    if (this.email && this.password) {
-      getLogin({ email: this.email, password: this.password } as LoginInfo)
+    if (this.login.email && this.login.password) {
+      getLogin(this.login)
         .then(res => {
           this.user = res.data as UserStatus;
-          console.log(res);
         })
         .catch(err => {
           console.log(err.message);
         });
     } else {
-      //send error 
       console.log('Please enter an email and password');
     }
 

@@ -13,7 +13,7 @@
     <!-- TODO: implement this -->
     <p (click)="makeComment(subreddit.id)">Comment</p>
   </div>
-  <div *ngIf="subreddit.comments">
+  <div *ngIf="subreddit.comments && subreddit.showComments">
     <div *ngFor="let comment of subreddit.comments">
       <app-comments [comment]="comment"></app-comments>
     </div>

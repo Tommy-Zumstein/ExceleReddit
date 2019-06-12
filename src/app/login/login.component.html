@@ -6,6 +6,11 @@
       <button type=" submit">Login</button>
     </form>
   </div>
+
+  <div *ngIf="!user">
+    <app-users></app-users>
+  </div>
+
   <div *ngIf="user">
     <app-main></app-main>
   </div>

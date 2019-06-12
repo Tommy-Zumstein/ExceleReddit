@@ -9,9 +9,7 @@ import { Md5 } from 'ts-md5/dist/md5';
   styleUrls: ['./users.component.sass']
 })
 export class UsersComponent implements OnInit {
-  userName: string;
-  email: string;
-  password: string | Int32Array;
+  login: LoginInfo;
   friends: Array<Object> = [];
   blocked: Array<Object> = [];
   hidden: Array<Object> = [];
@@ -24,7 +22,8 @@ export class UsersComponent implements OnInit {
   ngOnInit() { }
 
   onSubmit() {
-    const { userName, email, password, friends, blocked, hidden, mine, multi } = this;
+    const { userName, email, password } = this.login;
+    const { friends, blocked, hidden, mine, multi } = this;
 
     createUser({
       user: { userName, email },
@@ -44,8 +43,9 @@ export class UsersComponent implements OnInit {
   }
 
   setValue(login: LoginInfo) {
-    if (login.userName) this.userName = login.userName;
-    else if (login.password) this.password = Md5.hashStr(<string>login.password);
-    else this.email = login.email;
+    if (login.password) {
+      login.password = Md5.hashStr(<string>login.password);
+    }
+    this.login = { ...this.login, ...login };
   }
 }

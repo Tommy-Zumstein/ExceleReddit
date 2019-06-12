@@ -17,6 +17,7 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.homePage.homePage().subscribe(
       resultsFromReddit => {
+        // FIXME: should change this to an object with 'id' as keys for easier searching
         this.data = map(
           resultsFromReddit,
           result => {

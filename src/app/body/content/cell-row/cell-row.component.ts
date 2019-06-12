@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { forEach, pick, map } from 'lodash';
+import { findIndex, forEach, pick, map } from 'lodash';
 import { CellRowService } from './cell-row.service';
 
 @Component({
@@ -16,22 +16,37 @@ export class CellRowComponent implements OnInit {
 
   ngOnInit() { }
 
-  addComments = (id) => {
+  // NOTE: this function has side effects for an object in another component
+  // STUDY: addComments will fetch new comments from the API everytime the post
+  //        gets unshown and then reshown, should we do that?
+  //        this could gives us the ability to show new comments, but is less efficient
+  addComments = (id: string) => {
+    const index = findIndex(this.data, data => {
+      return data.id === id;
+    });
+
+    if (index !== -1 && this.data[index]['comments'] && this.data[index]['showComments']) {
+      this.data[index]['showComments'] = !this.data[index]['showComments'];
+    } else {
+      this.getComments(id);
+    }
+  }
+
+  // NOTE: this function has side effects for an object in another component
+  getComments(id: string) {
     this.service.getComments(id).subscribe(
       resultsFromReddit => {
         forEach(this.data, (data, index) => {
           if (data.id === id) {
-
-            // NOTE: this is a side effect modifying the data object
+            // NOTE: these are side effects modifying the data object
             this.data[index]['comments'] = map(resultsFromReddit.comments, result => {
               return pick(result.data, ['author', 'body', 'id', 'name', 'parent_id', 'permalink', 'replies', 'subreddit', 'subreddit_id']);
             });
-
+            this.data[index]['showComments'] = true;
           }
         });
 
         return this.data;
-
       });
   }
 

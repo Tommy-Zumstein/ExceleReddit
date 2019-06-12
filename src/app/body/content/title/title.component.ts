@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { findIndex } from 'lodash/findIndex';
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
