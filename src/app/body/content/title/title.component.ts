@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { findIndex } from 'lodash/findIndex';
+import { RedditPost } from 'src/types';
 @Component({
   selector: 'app-title',
   templateUrl: './title.component.html',
@@ -10,7 +10,7 @@ export class TitleComponent implements OnInit {
   @Input() counterInc: Function;
   @Input() getComments: Function;
   @Input() lineNumber: Number;
-  @Input() subreddit: Object;
+  @Input() subreddit: RedditPost;
   @Input() makeComment: Function;
 
   constructor() { }

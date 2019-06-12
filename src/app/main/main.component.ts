@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map, pick } from 'lodash';
 import { MainService } from './main.service';
-import { UserStatus } from 'src/types';
+import { UserStatus, RedditPost } from 'src/types';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +9,7 @@ import { UserStatus } from 'src/types';
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
-  data: Array<Object>;
+  data: Array<RedditPost>;
   user: UserStatus;
 
   constructor(private homePage: MainService) { }

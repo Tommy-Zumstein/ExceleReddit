@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { findIndex, forEach, pick, map } from 'lodash';
 import { CellRowService } from './cell-row.service';
+import { RedditPost } from 'src/types';
 
 @Component({
   selector: 'app-cell-row',
@@ -8,7 +9,7 @@ import { CellRowService } from './cell-row.service';
   styleUrls: ['./cell-row.component.sass']
 })
 export class CellRowComponent implements OnInit {
-  @Input() data: Array<Object>;
+  @Input() data: Array<RedditPost>;
   counter: number = 0;
   expandComment: boolean = false;
 

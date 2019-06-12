@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { RedditPost } from 'src/types';
 
 @Component({
   selector: 'app-body',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./body.component.sass']
 })
 export class BodyComponent implements OnInit {
-  @Input() data: Object;
+  @Input() data: RedditPost;
 
   constructor() {
   }
