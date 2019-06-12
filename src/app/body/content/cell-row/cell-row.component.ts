@@ -42,6 +42,7 @@ export class CellRowComponent implements OnInit {
             this.data[index]['comments'] = map(resultsFromReddit.comments, result => {
               return pick(result.data, ['author', 'body', 'id', 'name', 'parent_id', 'permalink', 'replies', 'subreddit', 'subreddit_id']);
             });
+
             this.data[index]['showComments'] = true;
           }
         });
