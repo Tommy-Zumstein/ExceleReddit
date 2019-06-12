@@ -13,5 +13,8 @@
 
   <div *ngIf="user">
     <app-main></app-main>
+    {{currentUserInfo && currentUserInfo.userId}}
+    {{currentUserInfo && currentUserInfo.user.userName}}
+    {{currentUserInfo && currentUserInfo.user.email}}
   </div>
 </div>

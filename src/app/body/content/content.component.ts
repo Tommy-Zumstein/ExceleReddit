@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserStatus } from 'src/types';
+import { UserStatus, UserInfo } from 'src/types';
 
 @Component({
   selector: 'app-content',
@@ -18,4 +18,8 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
   }
 
+  getUser() {
+    console.log(this.user);
+    return localStorage.getItem('refreshToken');
+  }
 }
