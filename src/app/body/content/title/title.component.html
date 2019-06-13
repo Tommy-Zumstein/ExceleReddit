@@ -1,14 +1,14 @@
 <div class="row" (click)="addComments(subreddit.id)">
-  <div class="col-xs-1">{{counterInc}}</div>
-  <div class="col-xs-1">↑</div>
-  <div class="col-xs-1">↓</div>
-  <div class="col-xs-1">
+  <div class="col-sm">{{counterInc}}</div>
+  <div class="col-sm">↑</div>
+  <div class="col-sm">↓</div>
+  <div class="col-sm">
     <app-cell-link link={{subreddit.link}} text="+"></app-cell-link>
   </div>
-  <div class="col-sm-1">{{subreddit.author}}</div>
-  <div class="col-sm-1">{{subreddit.title}}</div>
+  <div class="col-sm">{{subreddit.author}}</div>
+  <div class="col-sm">{{subreddit.subreddit}}</div>
   <div class="col-xl">{{subreddit.title}}</div>
-  <div class="col-md-2">
+  <div class="col-md">
     <!-- This is a link to add comment to a post -->
     <!-- TODO: implement this -->
     <p (click)="makeComment(subreddit.id)">Comment</p>

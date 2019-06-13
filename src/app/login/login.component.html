@@ -1,14 +1,21 @@
 <div>
   <div *ngIf="!user">
     <form (submit)="loginSubmit()">
+      <label for="email">Email:</label>
       <input #email type="email" name="email" (blur)="setLogin({email: email.value})" />
+
+
+      <label for="password">Password:</label>
       <input #password type="password" name="password" (blur)="setLogin({password: password.value})" />
-      <button type=" submit">Login</button>
+
+      <button type="submit">Login</button>
     </form>
   </div>
 
+  <p class="seperator"></p>
+
   <div *ngIf="!user">
-    <app-users></app-users>
+    <app-users [user]="user"></app-users>
   </div>
 
   <div *ngIf="user">

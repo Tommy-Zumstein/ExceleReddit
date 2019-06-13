@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LoginInfo } from '../../types';
 import { getLoginUsingToken, getLogin } from '../../api/users.api';
 import { Md5 } from 'ts-md5/dist/md5';
-import { UserStatus, UserInfo } from 'src/types';
+import { UserStatus } from 'src/types';
 
 @Component({
   selector: 'app-login',

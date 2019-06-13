@@ -54,7 +54,7 @@ describe('Get a Specific User', function () {
 
     before(function (done) {
         chai.request('http://localhost:8080')
-            .get('/getUser?userId=b3ec8866-1a9f-44f0-95e5-dc3b9f787d7f')
+            .get('/getUser?userId=fcRxlEMuCSNuUrQraIiCnJ5Dkaf1')
             .end(function (err, res) {
                 requestResult = res.body;
                 response = res;
@@ -99,7 +99,7 @@ describe('Get a Specific User', function () {
 
     before(function (done) {
         chai.request('http://localhost:8080')
-            .get('/getFriends?userId=b3ec8866-1a9f-44f0-95e5-dc3b9f787d7f')
+            .get('/getFriends?userId=fcRxlEMuCSNuUrQraIiCnJ5Dkaf1')
             .end(function (err, res) {
                 requestResult = res.body;
                 response = res;

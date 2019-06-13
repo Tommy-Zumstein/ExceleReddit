@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { createUser } from './../../api/users.api';
 import { LoginInfo } from '../../types';
 import { Md5 } from 'ts-md5/dist/md5';
+import { UserStatus } from 'src/types';
 
 @Component({
   selector: 'app-users',
@@ -9,6 +10,7 @@ import { Md5 } from 'ts-md5/dist/md5';
   styleUrls: ['./users.component.sass']
 })
 export class UsersComponent implements OnInit {
+  @Input() user: UserStatus;
   login: LoginInfo;
   friends: Array<Object> = [];
   blocked: Array<Object> = [];
@@ -35,7 +37,8 @@ export class UsersComponent implements OnInit {
       multi,
     })
       .then(res => {
-        console.log(res.data);
+        localStorage.setItem('refreshToken', res.data.refreshToken);
+        this.user = res.data as UserStatus;
       })
       .catch(err => {
         console.log(err.message);
