@@ -20,7 +20,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@types/md5": "^2.1.33",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "core-js": "^2.5.4",
